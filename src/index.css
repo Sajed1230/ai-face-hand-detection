@@ -1,0 +1,139 @@
+:root {
+  /* ألوان الذكاء الاصطناعي الحديثة */
+  --bg: #050508;
+  --text-h: #ffffff;
+  --text: #a1a1aa;
+  --accent: #8b5cf6;
+  /* بنفسجي ذكاء اصطناعي */
+  --accent-glow: rgba(139, 92, 246, 0.3);
+  --border: #27272a;
+  --glass: rgba(24, 24, 27, 0.8);
+
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --mono: 'Fira Code', monospace;
+
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  /* overflow-x: hidden; */
+  /* خلفية متحركة تشبه الشبكة العصبية */
+  background:
+    radial-gradient(circle at 50% 50%, var(--accent-glow) 0%, transparent 50%),
+    linear-gradient(to right, #09090b 1px, transparent 1px) 0 0 / 40px 40px,
+    linear-gradient(to bottom, #09090b 1px, transparent 1px) 0 0 / 40px 40px;
+  background-attachment: fixed;
+}
+
+#root {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* تصميم العنوان ليصبح "AI Style" */
+h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 800;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: var(--text-h);
+  letter-spacing: -0.05em;
+  margin: 1rem 0;
+  background: linear-gradient(to bottom right, #fff 30%, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 15px var(--accent-glow));
+}
+h3 {
+  font-family: var(--heading);
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 24px 0 12px;
+  padding-right: 96%;
+  border-left: 3px solid var(--accent);
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  /* توهج خفيف للنص ليعطي إيحاء الذكاء الاصطناعي */
+  text-shadow: 0 0 10px var(--accent-bg);
+}
+
+/* إضافة لمسة احترافية عند وجود كود أو حالة بجانب العنوان */
+h3 span {
+  font-size: 14px;
+  color: var(--accent);
+  margin-left: 10px;
+  font-family: var(--mono);
+  background: var(--accent-bg);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--accent-border);
+}/* حاوية الكاميرا والموديلات (The Logic Container) */
+.model-card {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease;
+}
+
+.model-card:hover {
+  border-color: var(--accent);
+}
+
+/* كود برمجي نظيف */
+code {
+  font-family: var(--mono);
+  background: #18181b;
+  color: var(--accent);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.9em;
+  border: 1px solid var(--border);
+}
+
+/* تأثير النبض للموديلات النشطة (Active Models) */
+.status-pulse {
+  width: 12px;
+  height: 12px;
+  background: #10b981;
+  /* Green for Active */
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  box-shadow: 0 0 10px #10b981;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+
+  70% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(0.95);
+    opacity: 1;
+  }
+}
